@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: $commonWidth;
+  margin: 0 auto;
+  //padding: 0 $gutter;
+  width: 100%;
+}
+
+.title {
+  font: 400 24px $oranienbaum;
+  text-transform: uppercase;
+  margin-left: auto;
+
+  @include breakpoint(el) {
+    font-size: 48px;
+  }
+
+  b {
+    font-size: 40px;
+    color: $brown;
+    text-transform: capitalize;
+
+    @include breakpoint(el) {
+      font-size: 64px;
+    }
+
+  }
+
+}
+
+.button {
+  font: 500 12px $montserrat;
+  color: $white;
+  background: $brown;
+  box-shadow: 0 2px 5px transparentize($brown, .46), 0 2px 5px $brown;
+  min-width: 160px;
+  min-height: 40px;
+  display: inline-block;
+
+  &:active {
+    box-shadow: none;
+    background: $red;
+  }
+
+  @include breakpoint(el) {
+    transition: all .2s ease-in-out;
+    font-size: 14px;
+    &:hover {
+      background: $red;
+      box-shadow: none;
+    }
+  }
+
+}
+
+.section-overlay {
+  background: #EDE6DF;
+  opacity: .6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.workemail {
+  display: none !important;
+}
+
+.has-error {
+  border-color: #EE442C !important;
+  svg path {
+    fill: #EE442C;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(0,0,0,0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}

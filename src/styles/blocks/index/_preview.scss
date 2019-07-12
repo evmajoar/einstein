@@ -1,0 +1,216 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.preview {
+  background: $beigeLight url($imageDir + 'bg-preview.jpg') center top no-repeat;
+  padding: 130px 0 40px;
+  position: relative;
+
+  &::before {
+    @include pseudo();
+    top: 0;
+    right: 0;
+    width: 154px;
+    height: 388px;
+    background: url($imageDir + 'ein.png') center left / 388px 388px no-repeat;
+    z-index: 1;
+
+    @include breakpoint(md) {
+      width: 240px;
+    }
+
+    @include breakpoint(el) {
+      width: 519px;
+      height: 815px;
+      background-size: 815px 815px;
+    }
+
+  }
+
+  @media (min-width: 375px) {
+    background-image: url($imageDir + 'bg-preview-768.jpg');
+  }
+
+  @include breakpoint(md) {
+    padding-bottom: 20px;
+    background-image: url($imageDir + 'bg-preview-1920.jpg');
+  }
+
+  @include breakpoint(el) {
+    padding: 250px 0 60px;
+  }
+
+  .container {
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0 $gutter;
+    max-width: 375px;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(md) {
+      max-width: 768px;
+      padding: 0 $gutter + 50px;
+    }
+
+    @include breakpoint(el) {
+      max-width: $commonWidth;
+      padding: 0 $gutter;
+    }
+
+  }
+
+  &__title {
+    svg {
+      width: 250px;
+      height: auto;
+      margin-left: -14px;
+
+      @media (min-width: 375px) {
+        margin-left: 42px;
+      }
+
+      @include breakpoint(md) {
+        margin-left: 55px;
+      }
+
+      @include breakpoint(el) {
+        width: 670px;
+        margin-left: 122px;
+      }
+
+    }
+  }
+
+  &__blockquote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0 40px;
+    position: relative;
+
+    @media (min-width: 375px) {
+      margin-bottom: 70px;
+    }
+
+    @include breakpoint(md) {
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint(el) {
+      margin-bottom: 160px;
+    }
+
+    &-text {
+      max-width: 182px;
+      margin-left: 95px;
+      font-size: 16px;
+      position: relative;
+
+      @media (min-width: 375px) {
+        margin-left: 140px;
+      }
+
+      @include breakpoint(md) {
+        max-width: 285px;
+        margin-left: auto;
+      }
+
+      @include breakpoint(el) {
+        max-width: 500px;
+        font-size: 28px;
+        padding-top: 30px;
+        &::before {
+          @include pseudo();
+          top: 0;
+          left: 0;
+          width: 99px;
+          height: 1px;
+          background: $black;
+        }
+      }
+
+    }
+
+    &-footer {
+      margin-left: 5px;
+      margin-top: 15px;
+
+      @media (min-width: 375px) {
+        margin-left: 30px;
+      }
+
+      @include breakpoint(md) {
+        margin-left: 140px;
+      }
+
+      @include breakpoint(el) {
+        max-width: 500px;
+        margin-left: auto;
+        width: 100%;
+      }
+
+    }
+
+    &-author {
+      font-size: 13px;
+      font-style: normal;
+
+      @include breakpoint(el) {
+        font-size: 24px;
+      }
+
+    }
+
+  }
+
+  &__info {
+    width: 50%;
+    font-size: 14px;
+    margin-right: auto;
+
+    @include breakpoint(md) {
+      margin-right: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: auto;
+      padding-left: 125px;
+    }
+
+    @include breakpoint(el) {
+      font-size: 18px;
+      padding-left: 270px;
+    }
+
+    span {
+      display: block;
+    }
+
+    &-adress {
+      @include breakpoint(md) {
+        color: $white;
+      }
+    }
+
+    &-time {
+      margin-top: 15px;
+      @include breakpoint(md) {
+        margin-left: 40px;
+      }
+    }
+
+  }
+
+  &__social {
+    margin-left: auto;
+    align-self: flex-end;
+
+    svg path {
+      fill: $black;
+    }
+
+  }
+
+}

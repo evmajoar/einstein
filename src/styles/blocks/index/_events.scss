@@ -1,0 +1,224 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.events {
+  background: #EDE6DF url($imageDir + 'bg-events-768.jpg') center top no-repeat;
+  padding: 36px 0;
+  position: relative;
+
+  @include breakpoint(md) {
+    padding: 52px 0;
+  }
+
+  @include breakpoint(el) {
+    padding: 84px 0;
+    background-image: url($imageDir + 'bg-events-1920.jpg');
+    background-size: contain;
+  }
+
+  .container {
+    padding: 0 $gutter;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    @include breakpoint(md) {
+      margin-right: 64px;
+    }
+  }
+
+  &__list {
+    margin-top: 35px;
+    width: 100%;
+
+    @include breakpoint(md) {
+      margin: 0 auto;
+      max-width: 1135px;
+    }
+
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(md) {
+      display: block;
+    }
+
+  }
+
+  &__categories {
+    @extend .main-nav__list;
+    margin-top: 35px;
+    max-width: 292px;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+
+    @include breakpoint(md) {
+      justify-content: flex-start;
+      margin-left: 49px;
+      max-width: 50%;
+    }
+
+    &-item {
+      @extend .main-nav__item;
+      margin-right: 35px;
+    }
+
+    &-button {
+      @extend .main-nav__link;
+    }
+
+  }
+
+  &__controls {
+    @extend .menu__controls;
+    max-width: 178px;
+    margin-top: 30px;
+
+    @include breakpoint(md) {
+      margin-top: -30px;
+      margin-bottom: 50px;
+      margin-right: 64px;
+    }
+
+  }
+
+  &__counter {
+    @extend .menu__counter;
+
+    &-this {
+      @extend .menu__counter-this;
+    }
+
+  }
+
+  &__button {
+    @extend .menu__button;
+
+    &--prev {
+      @extend .menu__button--prev;
+    }
+
+  }
+
+}
+
+//EVENT
+.event {
+  margin: 0 auto;
+  max-width: 292px;
+  width: 100%;
+  order: -1;
+
+  @include breakpoint(md) {
+    max-width: 100%;
+  }
+
+  .owl-item {
+    //.event__item {
+    //  transition: all .3s ease-in-out;
+    //}
+  }
+
+  .owl-item.active {
+    .event__item {
+      margin-top: 35px;
+    }
+
+  }
+
+  .owl-item.center {
+    .event__item {
+      max-width: 300px;
+      margin-top: 0;
+
+      @include breakpoint(el) {
+        max-width: 370px;
+      }
+
+    }
+
+    @include breakpoint(el) {
+      .event__title {
+        font-size: 36px;
+        min-height: 70px;
+      }
+    }
+
+  }
+
+  &__item {
+    position: relative;
+
+    @include breakpoint(md) {
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    @include breakpoint(el) {
+      max-width: 300px;
+    }
+
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 59px;
+    background: $orange;
+    text-align: center;
+    color: $white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    z-index: 10;
+
+    @include breakpoint(el) {
+      font-size: 24px;
+    }
+
+  }
+
+  &__text {
+    margin-top: 30px;
+  }
+
+}
+
+.ui-state-active {
+  .ui-tabs-anchor {
+    @extend .main-nav__link;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      @include pseudo();
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 13px;
+      background: $red;
+      z-index: 1;
+      transition: all .2s ease-in-out;
+    }
+
+    span {
+      z-index: 2;
+      position: relative;
+      display: block;
+    }
+
+    &::before {
+      width: 100%;
+    }
+
+  }
+}

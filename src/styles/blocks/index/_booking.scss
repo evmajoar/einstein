@@ -1,0 +1,245 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.booking {
+  padding: 37px 0;
+  background: $grey;
+
+  @include breakpoint(md) {
+    padding: 52px 0;
+  }
+
+  @include breakpoint(el) {
+    padding: 63px 0;
+  }
+
+  .container {
+    padding: 0 $gutter + 19px;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__text {
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: center;
+
+    @include breakpoint(md) {
+      font-size: 20px;
+    }
+
+    @include breakpoint(el) {
+      margin-top: 40px;
+      font-size: 24px;
+    }
+
+    strong {
+      display: block;
+      margin-top: 20px;
+      font-weight: 400;
+
+      @include breakpoint(el) {
+        margin-top: 40px;
+        font-size: 24px;
+      }
+
+    }
+
+  }
+
+
+  //FORM
+  &__form {
+    max-width: 280px;
+    width: 100%;
+
+    @include breakpoint(md) {
+      max-width: 460px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    @include breakpoint(el) {
+      margin-top: 25px;
+      max-width: 100%;
+    }
+
+  }
+
+  &__inputs {
+    margin-top: 40px;
+    border: 1px solid $orange;
+    border-radius: 2px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(md) {
+      width: calc(100% / 2 - 10px);
+      margin-top: 20px;
+    }
+
+    @include breakpoint(el) {
+      width: calc(100% / 4 - 18px);
+    }
+
+    &:focus {
+      > svg g {
+          fill: $orange;
+        }
+    }
+
+  }
+
+  &__input {
+    font: 400 14px $montserrat;
+    border: 0;
+    height: 100%;
+    width: calc(100% - 45px);
+    color: $brown;
+    padding: 5px 24px;
+    background: $grey;
+
+    @include breakpoint(el) {
+      font-size: 18px;
+    }
+
+    @include placeholder {
+      color: $brown;
+    }
+
+    @include placeholderHidden;
+
+  }
+
+  &__submit {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    min-width: 181px;
+
+    @include breakpoint(md) {
+      margin-top: 37px;
+    }
+
+    @include breakpoint(el) {
+      min-width: 245px;
+      min-height: 54px;
+      font-size: 18px;
+      margin-top: 65px;
+    }
+
+  }
+
+}
+
+//DATEPICKER
+.ui-datepicker {
+  font-family: $montserrat;
+  background: $white;
+  box-shadow: 0 2px 8px transparentize($black, .85);
+  border-radius: 2px;
+  max-width: 250px;
+  width: 100%;
+
+  @media (min-width: 346px) {
+    max-width: 278px;
+  }
+
+  @include breakpoint(md) {
+    max-width: 218px;
+  }
+
+  @include breakpoint(el) {
+    max-width: 263px;
+  }
+
+}
+
+.ui-datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 39px;
+  border-bottom: 1px solid transparentize(#000, .91);
+}
+
+.ui-datepicker-title {
+  text-align: center;
+  font-size: 14px;
+  order: 2;
+  width: 60%;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next{
+  cursor: pointer;
+}
+
+.ui-datepicker-next {
+  order: 3;
+}
+
+.ui-datepicker-calendar {
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+
+  th {
+    font-weight: 400;
+    padding-bottom: 10px;
+  }
+
+  td {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 33px;
+    height: 31px;
+
+    @include breakpoint(md) {
+      width: 23px;
+      height: 23px;
+    }
+
+    @include breakpoint(el) {
+      width: 33px;
+      height: 31px;
+      &:not(.ui-datepicker-other-month) {
+        .ui-state-default {
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+.ui-datepicker-today {
+  background: transparentize($orange, .35);
+  .ui-state-highlight {
+    color: $red;
+  }
+}
+
+.ui-state-default {
+  color: transparentize(#000, .35);
+  font-size: 14px;
+}
+
+.ui-datepicker-other-month {
+  .ui-state-default {
+    color: transparentize(#000, .75);
+  }
+}

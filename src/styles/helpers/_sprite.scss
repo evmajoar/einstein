@@ -1,0 +1,95 @@
+%svg-common {
+	background: url("../icons/sprite.svg") no-repeat;
+}
+
+%-svg-icon-al {
+	@extend %svg-common;
+	background-position: 0 0;
+	width: 15px;
+	height: 16px;
+}
+
+%-svg-icon-al2 {
+	@extend %svg-common;
+	background-position: 0 5.776173285198556%;
+	width: 11px;
+	height: 12px;
+}
+
+%-svg-icon-ar {
+	@extend %svg-common;
+	background-position: 0 10.256410256410257%;
+	width: 15px;
+	height: 16px;
+}
+
+%-svg-icon-ar2 {
+	@extend %svg-common;
+	background-position: 0 15.884476534296029%;
+	width: 11px;
+	height: 12px;
+}
+
+%-svg-icon-calendar {
+	@extend %svg-common;
+	background-position: 0 21.132075471698112%;
+	width: 24px;
+	height: 24px;
+}
+
+%-svg-icon-clock {
+	@extend %svg-common;
+	background-position: 0 30.18867924528302%;
+	width: 24px;
+	height: 24px;
+}
+
+%-svg-icon-doc {
+	@extend %svg-common;
+	background-position: 0 39.39393939393939%;
+	width: 26px;
+	height: 25px;
+}
+
+%-svg-icon-instagram {
+	@extend %svg-common;
+	background-position: 0 47.95539033457249%;
+	width: 20px;
+	height: 20px;
+}
+
+%-svg-icon-marker {
+	@extend %svg-common;
+	background-position: 0 55.39033457249071%;
+	width: 20px;
+	height: 20px;
+}
+
+%-svg-icon-marker2 {
+	@extend %svg-common;
+	background-position: 0 70.12448132780084%;
+	width: 36px;
+	height: 48px;
+}
+
+%-svg-icon-phone {
+	@extend %svg-common;
+	background-position: 0 81.88679245283019%;
+	width: 24px;
+	height: 24px;
+}
+
+%-svg-icon-user {
+	@extend %svg-common;
+	background-position: 0 90.94339622641509%;
+	width: 24px;
+	height: 24px;
+}
+
+%-svg-icon-vk {
+	@extend %svg-common;
+	background-position: 0 100%;
+	width: 24px;
+	height: 24px;
+}
+

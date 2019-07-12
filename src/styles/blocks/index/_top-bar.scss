@@ -1,0 +1,185 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.top-bar {
+  background: $beige;
+  padding: 45px 0;
+
+  @include breakpoint(md) {
+    padding: 32px 0;
+  }
+
+  .container {
+    align-items: center;
+    padding: 0 $gutter;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 $gutter + 19px;
+    }
+
+    @include breakpoint(el) {
+      padding: 0 $gutter;
+    }
+
+  }
+
+  &__nav {
+    margin-top: 20px;
+
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
+
+    //@include breakpoint(el) {
+    //  margin-top: -10px;
+    //}
+
+  }
+
+  &__contacts {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
+
+    &-item {
+      margin-top: 10px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &-link {
+      font: 500 14px $montserrat;
+      color: $black;
+      text-decoration: underline;
+
+      @include breakpoint(el) {
+        transition: all .2s ease-in-out;
+      }
+
+      &:active {
+        color: $red;
+      }
+
+      &:hover {
+        @include breakpoint(el) {
+          color: $red;
+        }
+      }
+
+    }
+
+    &-button {
+      min-width: 181px;
+
+      @include breakpoint(md) {
+        min-width: 160px;
+      }
+
+      @include breakpoint(el) {
+        min-width: 181px;
+      }
+
+    }
+
+  }
+
+}
+
+
+// LOGO
+.logo {
+
+  svg {
+    height: auto;
+    max-width: 149px;
+    width: 100%;
+
+    @include breakpoint(el) {
+      max-width: 187px;
+    }
+
+  }
+
+}
+
+
+// MAIN-NAN
+.main-nav {
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+  }
+
+  &__item {
+    margin-right: 15px;
+
+    @include breakpoint(md) {
+      margin-right: 30px;
+    }
+
+    @include breakpoint(el) {
+      margin-right: 40px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+  &__link {
+    font: 500 13px $montserrat;
+    color: $black;
+    text-transform: uppercase;
+
+    @include breakpoint(el) {
+      padding: 0 9px;
+      position: relative;
+      display: block;
+      font-size: 14px;
+
+      &::before {
+        @include pseudo();
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 13px;
+        background: $red;
+        z-index: 1;
+        transition: all .2s ease-in-out;
+      }
+
+      span {
+        z-index: 2;
+        position: relative;
+        display: block;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+
+    }
+
+    &:active > span {
+      color: $red;
+    }
+
+  }
+
+}
+

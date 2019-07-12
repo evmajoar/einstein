@@ -1,0 +1,29 @@
+// Common
+@import 'styles/common/normalize';
+@import 'styles/common/fonts';
+@import 'styles/common/common';
+
+// Helpers
+@import 'styles/helpers/mixs';
+@import "styles/helpers/sprite";
+@import "styles/helpers/animations";
+
+// Common blocks
+@import 'styles/blocks/index/main-header';
+@import 'styles/blocks/index/top-bar';
+@import 'styles/blocks/index/bottom-bar';
+@import 'styles/blocks/index/main-footer';
+@import 'styles/blocks/index/preload';
+
+// Index blocks
+@import 'styles/blocks/index/preview';
+@import 'styles/blocks/index/menu';
+@import 'styles/blocks/index/about';
+@import 'styles/blocks/index/events';
+@import 'styles/blocks/index/booking';
+
+// Thank blocks
+@import 'styles/blocks/thanks/thank';
+
+// Tech blocks
+@import 'styles/blocks/techs/tech';

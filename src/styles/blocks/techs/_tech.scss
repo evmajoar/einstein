@@ -1,0 +1,48 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.tech {
+  background: url($imageDir + 'bg-thank.jpg') center top / cover no-repeat;
+  position: relative;
+  padding: 120px 0 160px;
+
+  @include breakpoint(md) {
+    background-image: url($imageDir + 'bg-thank-768.jpg');
+    padding: 150px 0;
+  }
+
+  @include breakpoint(el) {
+    background-image: url($imageDir + 'bg-thank-1920.jpg');
+    padding: 206px 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    padding: 0 $gutter + 15px;
+    align-items: center;
+  }
+
+  &__title {
+    margin-left: 0;
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 300;
+    font-size: 24px;
+    margin-top: 30px;
+    width: 100%;
+
+    @include breakpoint(md) {
+      max-width: 450px;
+    }
+
+    @include breakpoint(md) {
+      max-width: 670px;
+      font-size: 36px;
+    }
+
+  }
+
+}
